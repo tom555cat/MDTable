@@ -15,11 +15,11 @@ struct MDTableConst{
 public extension UITableView{    
     var manager:TableManager?{
         get{
-            return objc_getAssociatedObject(self,MDTableConst.associatedKey) as? TableManager
+            return objc_getAssociatedObject(self,MDTableConst.associatedKey!) as? TableManager
         }set{
             asyncExecuteOnMain {
                 newValue?.bindTo(tableView: self)
-                objc_setAssociatedObject(self, MDTableConst.associatedKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+                objc_setAssociatedObject(self, MDTableConst.associatedKey!, newValue, .OBJC_ASSOCIATION_RETAIN)
             }
         }
     }

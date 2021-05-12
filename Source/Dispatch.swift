@@ -10,9 +10,9 @@ import Foundation
 import CoreFoundation
 
 class Task{
-    private var _task:(Void)->Void
+    private var _task:()->Void
     var taskID:String
-    init(_ identifier:String,_ task:@escaping (Void)->Void){
+    init(_ identifier:String,_ task:@escaping ()->Void){
         self._task = task
         self.taskID = identifier
     }
@@ -40,7 +40,7 @@ public class TaskDispatcher{
     init(mode:TaskExecuteMode) {
         self.mode = mode
     }
-    public func add(_ identifier:String, _ block:@escaping (Void)->Void){
+    public func add(_ identifier:String, _ block:@escaping ()->Void){
         let task = Task(identifier,block)
         self.add(task)
     }

@@ -13,13 +13,13 @@ open class Row:ReactiveRow{
     public var image:UIImage?
     public var title:String
     public var detailTitle:String?
-    public var accessoryType: UITableViewCellAccessoryType
-    public var cellStyle: UITableViewCellStyle = .default
+    public var accessoryType: UITableViewCell.AccessoryType
+    public var cellStyle: UITableViewCell.CellStyle = .default
     public init(title:String,
                 image:UIImage? = nil,
                 detailTitle:String? = nil,
                 rowHeight:CGFloat = 44.0,
-                accessoryType: UITableViewCellAccessoryType = .none) {
+                accessoryType: UITableViewCell.AccessoryType = .none) {
         self.image = image
         self.title = title
         self.detailTitle = detailTitle
